@@ -3,8 +3,14 @@
 };
 
 export default validator;*/
+      
+let getNumbers= document.getElementById("valid").addEventListener('click',getCardNumber);
+const changeNumbers= document.getElementById("number");
+let addAll = 0;
 
-document.getElementById("valid").addEventListener('click',getCardNumber);
+changeNumbers.addEventListener('input', replaceNumbers);
+
+
 
 /*Condiciono la entrada de datos a sólo números del 0 al 9 mediante el uso de código ASCII*/
 function onlyNumbers(event) {
@@ -17,13 +23,10 @@ function onlyNumbers(event) {
 /* Declaro una variable donde pueda guardar el número que ingresa el usuario, posteriormente creo una función que primero obtiene el tamaño de la cadena alojada en mi var cardNumber */
 let cardNumber;
 function getCardNumber(){
-  console.log("Si entra");
-  cardNumber = document.getElementById('number').value;
+  cardNumber = changeNumbers.value;
   let longNumber = cardNumber.length;
 
-
 /*Creo una variable que pueda ir guardando los valores obtenidos en cada ciclo, y con ayuda del for recorremos cada caracter de la cadena obtenida anteriormente*/
-  let addAll = 0;
   let counter= 1;
   for (let i=longNumber-1; i>=0; i--){
     let positionNumber = parseInt(cardNumber.charAt(i));
@@ -44,12 +47,35 @@ function getCardNumber(){
     counter++;
   }
   if(addAll % 10 ==0){
-    console.log("tarjeta aceptada");
+    alert("tarjeta aceptada");
   }else{
-    console.log("tarjeta rechazada");
-  }
+    alert("tarjeta rechazada");
+  } 
+}
+function replaceNumbers(){
+  let userNumber = changeNumbers.value;
+  let lengthReplace = userNumber.length;
   
+  if(lengthReplace>=4){
+    let diferencePosition = lengthReplace-4;
+    
+    let lastNumbers = userNumber.substring(diferencePosition);
+    console.log(lastNumbers);
+    let addCharacter = "";
+      for(i=0; i<diferencePosition; i++){
+       // console.log(userNumber.charAt(i));
+       addCharacter+= "#";
+
+      }
+    //let valueReplace = addCharacter.replace(addCharacter, "#");
+    //console.log(valueReplace);
+    //console.log(addCharacter+lastNumbers);
+    changeNumbers.value = addCharacter+lastNumbers;
+  }
+
 }
 
+
  
+/* Función para enmascarar los dígitos de la tarjeta*/
 
