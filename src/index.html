@@ -28,15 +28,21 @@
   <section id="payCard">
     <h1>Datos de la Tarjeta</h1>
     <br>
-    <form id="insertNumber">
-      <input type="text" id="number" name="number" placeholder="Ingresa los 16 Dígitos de tu tarjeta">
-    </form>
+    <div id="insertNumber">
+      <input type="text" id="number" name="sizebox" size="30" placeholder="Ingresa los 16 Dígitos de tu tarjeta">
+      <button class="bttn"></button>
+    </div>
+    
     <br>
     <br>
     <span id="respuesta"></span>
-
-    <input type="text" id="date" name="date" size="4" placeholder="MM/AA"><br>
-    <input type="text" id="cvv" name="cvv" size="4" placeholder="CVV">
+    <div>
+    <input type="text" id="date" name="sizebox" size="6" placeholder="MM/AA">
+    <input type="text" id="cvv" name="sizebox" size="6" placeholder="CVV">
+    <br>
+    <label for="date" id="fontdate" name="fontstyle">Fecha de Vencimiento</label>
+    <label for="cvv" id="fontcvv" name="fontstyle">Ingresa el CVV</label>
+    </div>
     <br>
     <br>
     <button id="back" name="back">Regresar</button>
@@ -45,10 +51,10 @@
     <br>
   </section>
   <section>
-    <form>
-      <span><input type="checkbox" id="saveCard" name="selectSave">Guardar estos datos como forma de pago para mis
-        siguientes compras</span>
-    </form>
+  
+      <div id="saveNumber" style="display: none;"><input type="checkbox" id="saveCard" name="selectSave">Guardar estos datos como forma de pago para mis
+        siguientes compras</div>
+    
   </section>
   </main>
 

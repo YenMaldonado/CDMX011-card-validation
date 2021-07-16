@@ -1,29 +1,36 @@
 import validator from './validator.js';
 
-/*const number=document.getElementById("number");
-number.addEventListener('input',replaceString());*/
+const number=document.getElementById("number");
+let firstNumber = "";
+number.addEventListener('input',replaceString);
 
-function getValue(){
- const number=document.getElementById("number").value;
- return number;
+function replaceString(){
+   let strNumber= number.value;
+   let sizeNumber = firstNumber.length;
+   let diference = sizeNumber - strNumber.length;
+   console.log(diference);
+   if(sizeNumber >strNumber.length){
+       //eliminar últimos 2 dígitos de firstNumber
+       firstNumber = firstNumber.slice(0, (diference));
+       
+   }else{
+      firstNumber += strNumber.slice(diference);
+   }
+
+   number.value = validator.maskify(firstNumber); 
+   console.log(firstNumber);
+
+   
 }
 
-/*function replaceString(){
-   console.log("aquí está");
-   number.value = validator.maskify(number.value); 
-
-}*/
-
 function verResultado(){
-    if(validator.isValid(getValue())){
-        document.getElementById("respuesta").innerHTML="Tu tarjeta Aceptada"+validator.maskify(getValue());
+    if(validator.isValid(firstNumber)){
+        document.getElementById("respuesta").innerHTML="Tarjeta Aceptada";
     }else{
-        document.getElementById("respuesta").innerHTML="Tu tarjeta ha sido rechazada, verifica los datos ingresados"+validator.maskify(getValue());
+        document.getElementById("respuesta").innerHTML="Tu tarjeta ha sido rechazada, verifica los datos ingresados";
     }
 }
 document.getElementById("valid").addEventListener('click', verResultado);
 
-/*const changeNumbers= document.getElementById("number");
-let addAll = 0; 
-changeNumbers.addEventListener('input', validator.replaceNumbers());*/
+
 

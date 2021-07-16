@@ -2,6 +2,7 @@ const validator = {
 
   
   isValid(cardNumber){
+    console.log(cardNumber);
     let positionNumber;
     let addAll=0;
     let multiplyPair ;
@@ -22,16 +23,16 @@ const validator = {
         }
       }
       if (addAll % 10 == 0) {
-        console.log("tarjeta Aceptada");
+        //console.log("tarjeta Aceptada");
         return true;
       } else {
-        console.log("tarjeta Rechazada");
+        //console.log("tarjeta Rechazada");
         return false;
       }
     },
 
   maskify(userNumber) {
-    //let userNumber = changeNumbers.value;
+    console.log(userNumber);
     let lengthReplace = userNumber.length;
 
     if (lengthReplace >= 4) {
@@ -42,10 +43,9 @@ const validator = {
         
         addCharacter += "#";
       }
-      userNumber = addCharacter + lastNumbers;
-      //console.log(userNumber);
-      return userNumber;
+      userNumber = addCharacter + lastNumbers;    
     }
+    return userNumber;
   }
 };
 
