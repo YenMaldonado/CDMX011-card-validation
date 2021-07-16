@@ -1,0 +1,57 @@
+body{
+    margin: 5%;
+    align-content: center;
+    margin-left: 25%;
+}
+
+#title{
+    margin-top: 5%;
+    font-size: large;
+    font-family: Helvetica;
+    font-size: 48;
+    color: rgba(27, 61, 63, 1);;
+}
+#number{
+    padding: 10px 30px;
+
+}
+
+.button{
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom-style: groove;
+    padding: 8px;
+    border-radius: 4px;
+    border-color: rgba(27, 61, 63, 1), 0cm;
+}
+
+#icon{
+    height: 40px;
+    width: 40px;
+    left:500px;
+    top: 438px;
+    border-radius: 0px;
+
+}
+
+#back{
+    height: 30px;   
+    width: 70px;
+    left: 444px;
+    top: 775px;
+    border-radius: 8px;
+    Stroke: rgba(30, 158, 166, 1);
+    Font family: Helvetica;
+    Font style: Medium;
+    Font size: 26px;
+    Line height: 30px;
+    Line height: 100%;
+    text Align: Left;
+    Vertical align: Top;
+    Fill: rgba(30, 158, 166, 1);
+
+
+}
+
+#legal{
+    align-content: flex-end;
+}
